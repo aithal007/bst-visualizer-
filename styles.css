@@ -846,3 +846,250 @@ input:focus {
         box-shadow: none;
     }
 }
+
+/* ---------------------------------------------------------------------------
+   MOBILE RESPONSIVE STYLES
+   --------------------------------------------------------------------------- */
+
+/* Tablets and smaller */
+@media (max-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .left-panel,
+    .right-panel {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .container {
+        border-radius: 0;
+        margin: 0;
+    }
+
+    header {
+        padding: 30px 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .subtitle {
+        font-size: 0.95em;
+        margin-bottom: 15px;
+    }
+
+    .btn-header-docs {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .main-content {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    /* Left Panel - Query Interface */
+    .section {
+        padding: 15px;
+    }
+
+    .section h2 {
+        font-size: 1.1em;
+    }
+
+    .prolog-terminal h2 {
+        font-size: 1.2em;
+    }
+
+    .terminal-header {
+        padding: 8px;
+    }
+
+    .terminal-title {
+        font-size: 1.2em;
+    }
+
+    .terminal-subtitle {
+        font-size: 0.85em;
+    }
+
+    .query-input-container {
+        padding: 10px;
+    }
+
+    .prolog-prompt {
+        font-size: 1em;
+    }
+
+    .prolog-input {
+        font-size: 0.95em;
+        padding: 8px 10px;
+    }
+
+    .btn-execute {
+        padding: 10px 16px;
+        font-size: 0.95em;
+    }
+
+    .history-section h3 {
+        font-size: 1em;
+    }
+
+    .command-history {
+        max-height: 120px;
+        font-size: 0.9em;
+    }
+
+    /* Examples Section */
+    .examples-list {
+        gap: 8px;
+    }
+
+    .example-item {
+        padding: 10px;
+    }
+
+    .example-item code {
+        font-size: 0.85em;
+    }
+
+    .example-desc {
+        font-size: 0.8em;
+    }
+
+    /* Canvas Section */
+    .canvas-container {
+        min-height: 280px;
+        max-height: 350px;
+    }
+
+    .output-terminal {
+        max-height: 180px;
+        font-size: 0.85em;
+        padding: 10px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 20px 15px;
+    }
+
+    .legend h3 {
+        font-size: 1em;
+    }
+
+    .legend-items {
+        gap: 10px;
+    }
+
+    .legend-item {
+        font-size: 0.85em;
+    }
+
+    .legend-circle {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .subtitle {
+        font-size: 0.85em;
+    }
+
+    .btn-header-docs {
+        padding: 8px 16px;
+        font-size: 0.85em;
+    }
+
+    .main-content {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .section {
+        padding: 12px;
+    }
+
+    .section h2 {
+        font-size: 1em;
+    }
+
+    .prolog-input {
+        font-size: 0.9em;
+    }
+
+    .btn-execute {
+        padding: 8px 14px;
+        font-size: 0.9em;
+    }
+
+    .example-item {
+        padding: 8px;
+    }
+
+    .example-item code {
+        font-size: 0.8em;
+        word-break: break-all;
+    }
+
+    .canvas-container {
+        min-height: 250px;
+        max-height: 300px;
+    }
+
+    .output-terminal {
+        max-height: 150px;
+        font-size: 0.8em;
+        padding: 8px;
+    }
+
+    footer {
+        padding: 15px 10px;
+    }
+
+    .legend-items {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .canvas-container {
+        min-height: 200px;
+        max-height: 250px;
+    }
+
+    header {
+        padding: 20px 15px;
+    }
+
+    header h1 {
+        font-size: 1.6em;
+    }
+}
