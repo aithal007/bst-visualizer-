@@ -55,18 +55,40 @@ header::before {
     opacity: 0.3;
 }
 
+.header-logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.header-logo {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 header h1 {
-    font-size: 3em;
+    font-size: 2.8em;
     margin-bottom: 10px;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
     font-weight: 700;
     letter-spacing: 1px;
     position: relative;
     z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+    margin: 0;
 }
 
 .subtitle {
@@ -892,6 +914,16 @@ input:focus {
         gap: 10px;
     }
 
+    .header-logo-title {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .header-logo {
+        width: 45px;
+        height: 45px;
+    }
+
     .subtitle {
         font-size: 0.95em;
         margin-bottom: 15px;
@@ -1015,6 +1047,11 @@ input:focus {
 @media (max-width: 480px) {
     header h1 {
         font-size: 1.5em;
+    }
+
+    .header-logo {
+        width: 35px;
+        height: 35px;
     }
 
     .subtitle {
