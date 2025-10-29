@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BST Commands Reference</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #2874a6;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .command-category {
+            margin-bottom: 40px;
+        }
+
+        .category-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .command-card {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .command-card:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .command-syntax {
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 1.1em;
+            color: #27ae60;
+            font-weight: 600;
+            margin-bottom: 10px;
+            background: #1e1e1e;
+            padding: 10px 15px;
+            border-radius: 6px;
+        }
+
+        .command-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .command-example {
+            background: #fff3cd;
+            border-left: 3px solid #ffc107;
+            padding: 10px 15px;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+
+        .command-example strong {
+            color: #856404;
+        }
+
+        .command-example code {
+            font-family: 'Consolas', 'Courier New', monospace;
+            color: #27ae60;
+            background: #fff;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .note {
+            background: #d1ecf1;
+            border-left: 3px solid #17a2b8;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .note strong {
+            color: #0c5460;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌳 BST Commands Reference</h1>
+            <p>Complete guide to all supported Binary Search Tree operations</p>
+            <a href="index.html" class="back-btn">← Back to Visualizer</a>
+        </header>
+
+        <div class="content">
+            <!-- Tree Construction -->
+            <div class="command-category">
+                <h2 class="category-title">🏗️ Tree Construction</h2>
+                
+                <div class="command-card">
+                    <div class="command-syntax">build_tree([Values], T)</div>
+                    <div class="command-description">
+                        Creates a new binary search tree from a list of values. Each value is inserted in order, maintaining BST properties.
+                    </div>
+                    <div class="command-example">
+                        <strong>Example:</strong> <code>build_tree([50,30,70,20,40,60,80], T)</code><br>
+                        Creates a tree with root 50, left subtree containing 30,20,40 and right subtree containing 70,60,80
+                    </div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-syntax">clear</div>
+                    <div class="command-description">
+                        Removes all nodes from the tree, resulting in an empty tree.
+                    </div>
+                    <div class="command-example">
+                        <strong>Example:</strong> <code>clear</code><br>
+                        Clears the current tree visualization
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tree Modification -->
+            <div class="command-category">
+                <h2 class="category-title">✏️ Tree Modification</h2>
+                
+                <div class="command-card">
+                    <div class="command-syntax">insert(Value, T)</div>
+                    <div class="command-description">
+                        Inserts a new value into the binary search tree. The value is placed in the correct position to maintain BST ordering (left < root < right).
+                    </div>
+                    <div class="command-example">
+                        <strong>Example:</strong> <code>insert(45, T)</code><br>
+                        Inserts value 45 into the current tree
+                    </div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-syntax">delete(Value, T)</div>
+                    <div class="command-description">
+                        Removes a value from the tree. Handles three cases: leaf nodes, nodes with one child, and nodes with two children (replaces with in-order successor).
+                    </div>
+                    <div class="command-example">
+                        <strong>Example:</strong> <code>delete(30, T)</code><br>
+                        Removes node with value 30 from the tree
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tree Search -->
+            <div class="command-category">
+                <h2 class="category-title">🔍 Tree Search</h2>
+                
+                <div class="command-card">
+                    <div class="command-syntax">lookup(Value, T)</div>
+                    <div class="command-description">
+                        Searches for a specific value in the tree. Returns true if found, false otherwise. The visualization shows the search path taken.
+                    </div>
+                    <div class="command-example">
+                        <strong>Example:</strong> <code>lookup(40, T)</code><br>
+                        Searches for value 40 and highlights the path to it
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tree Traversals -->
+            <div class="command-category">
+                <h2 class="category-title">🚶 Tree Traversals</h2>
+                
+                <div class="command-card">
+                    <div class="command-syntax">inorder(T, L)</div>
+                    <div class="command-description">
+                        Performs an in-order traversal (Left → Root → Right). For a BST, this produces values in sorted ascending order.
+                    </div>
+                    <div class="command-example">
+                        <strong>Example:</strong> <code>inorder(T, L)</code><br>
+                        Returns sorted list: [20, 30, 40, 50, 60, 70, 80]
+                    </div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-syntax">preorder(T, L)</div>
+                    <div class="command-description">
+                        Performs a pre-order traversal (Root → Left → Right). Useful for creating a copy of the tree or getting prefix notation.
+                    </div>
+                    <div class="command-example">
+                        <strong>Example:</strong> <code>preorder(T, L)</code><br>
+                        Returns list: [50, 30, 20, 40, 70, 60, 80]
+                    </div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-syntax">postorder(T, L)</div>
+                    <div class="command-description">
+                        Performs a post-order traversal (Left → Right → Root). Useful for deleting the tree or getting postfix notation.
+                    </div>
+                    <div class="command-example">
+                        <strong>Example:</strong> <code>postorder(T, L)</code><br>
+                        Returns list: [20, 40, 30, 60, 80, 70, 50]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tree Properties -->
+            <div class="command-category">
+                <h2 class="category-title">📊 Tree Properties</h2>
+                
+                <div class="command-card">
+                    <div class="command-syntax">size(T)</div>
+                    <div class="command-description">
+                        Returns the total number of nodes in the tree.
+                    </div>
+                    <div class="command-example">
+                        <strong>Example:</strong> <code>size(T)</code><br>
+                        Returns: Size = 7
+                    </div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-syntax">height(T)</div>
+                    <div class="command-description">
+                        Returns the height of the tree (longest path from root to leaf). An empty tree has height 0, single node has height 1.
+                    </div>
+                    <div class="command-example">
+                        <strong>Example:</strong> <code>height(T)</code><br>
+                        Returns: Height = 3
+                    </div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-syntax">find_min(T)</div>
+                    <div class="command-description">
+                        Finds and returns the minimum value in the tree (leftmost node).
+                    </div>
+                    <div class="command-example">
+                        <strong>Example:</strong> <code>find_min(T)</code><br>
+                        Returns: Minimum = 20
+                    </div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-syntax">find_max(T)</div>
+                    <div class="command-description">
+                        Finds and returns the maximum value in the tree (rightmost node).
+                    </div>
+                    <div class="command-example">
+                        <strong>Example:</strong> <code>find_max(T)</code><br>
+                        Returns: Maximum = 80
+                    </div>
+                </div>
+
+                <div class="command-card">
+                    <div class="command-syntax">count_leaves(T)</div>
+                    <div class="command-description">
+                        Counts and returns the number of leaf nodes (nodes with no children).
+                    </div>
+                    <div class="command-example">
+                        <strong>Example:</strong> <code>count_leaves(T)</code><br>
+                        Returns: Leaf count = 4
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tree Validation -->
+            <div class="command-category">
+                <h2 class="category-title">✅ Tree Validation</h2>
+                
+                <div class="command-card">
+                    <div class="command-syntax">is_valid_bst(T)</div>
+                    <div class="command-description">
+                        Validates whether the tree satisfies Binary Search Tree properties (all left descendants < node < all right descendants).
+                    </div>
+                    <div class="command-example">
+                        <strong>Example:</strong> <code>is_valid_bst(T)</code><br>
+                        Returns: Valid BST or Not a valid BST
+                    </div>
+                </div>
+            </div>
+
+            <div class="note">
+                <strong>💡 Pro Tips:</strong><br>
+                • You can chain operations by executing queries one after another<br>
+                • Press Enter after typing a query to execute it quickly<br>
+                • Click on any query in the history to run it again<br>
+                • Use the example commands as templates for your own queries<br>
+                • The visualization will animate search paths and traversals
+            </div>
+        </div>
+    </div>
+</body>
+</html>

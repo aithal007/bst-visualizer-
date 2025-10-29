@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search Tree Visualizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌳 Binary Search Tree Visualizer</h1>
+            <p class="subtitle">Interactive BST Operations & Visualization</p>
+            <a href="commands.html" class="btn-header-docs" target="_blank">📚 View All Commands</a>
+        </header>
+
+        <div class="main-content">
+            <!-- Left Panel: Query Interface & Examples -->
+            <div class="left-panel">
+                <div class="section prolog-terminal">
+                    <h2>🔮 Prolog Query Interface</h2>
+                    <div class="terminal-header">
+                        <span class="terminal-title">?-</span>
+                        <span class="terminal-subtitle">Enter Prolog commands</span>
+                    </div>
+                    
+                    <div class="query-input-container">
+                        <div class="query-input-wrapper">
+                            <span class="prolog-prompt">?-</span>
+                            <input type="text" id="prologInput" class="prolog-input" 
+                                   placeholder="build_tree([50,30,70,20,40], T)" 
+                                   autocomplete="off" 
+                                   onkeypress="if(event.key === 'Enter') executePrologQuery()" />
+                        </div>
+                        <button onclick="executePrologQuery()" class="btn btn-execute">Execute</button>
+                    </div>
+
+                    <div class="section history-section">
+                        <h3>📜 Query History</h3>
+                        <div class="command-history" id="commandHistory"></div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>💡 Example Commands <span style="font-size: 0.7em; color: #95a5a6; font-weight: normal;">(Click to use)</span></h2>
+                    <div class="examples-list">
+                        <div class="example-item" onclick="setQuery('build_tree([50,30,70,20,40,60,80], T)')">
+                            <code>build_tree([50,30,70,20,40,60,80], T)</code>
+                            <span class="example-desc">Build a tree</span>
+                        </div>
+                        <div class="example-item" onclick="setQuery('insert(45, T)')">
+                            <code>insert(45, T)</code>
+                            <span class="example-desc">Insert value 45</span>
+                        </div>
+                        <div class="example-item" onclick="setQuery('delete(30, T)')">
+                            <code>delete(30, T)</code>
+                            <span class="example-desc">Delete value 30</span>
+                        </div>
+                        <div class="example-item" onclick="setQuery('lookup(40, T)')">
+                            <code>lookup(40, T)</code>
+                            <span class="example-desc">Search for 40</span>
+                        </div>
+                        <div class="example-item" onclick="setQuery('inorder(T, L)')">
+                            <code>inorder(T, L)</code>
+                            <span class="example-desc">Inorder traversal</span>
+                        </div>
+                        <div class="example-item" onclick="setQuery('preorder(T, L)')">
+                            <code>preorder(T, L)</code>
+                            <span class="example-desc">Preorder traversal</span>
+                        </div>
+                        <div class="example-item" onclick="setQuery('postorder(T, L)')">
+                            <code>postorder(T, L)</code>
+                            <span class="example-desc">Postorder traversal</span>
+                        </div>
+                        <div class="example-item" onclick="setQuery('is_valid_bst(T)')">
+                            <code>is_valid_bst(T)</code>
+                            <span class="example-desc">Check if valid BST</span>
+                        </div>
+                        <div class="example-item" onclick="setQuery('clear')">
+                            <code>clear</code>
+                            <span class="example-desc">Clear the tree</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Tree Visualization & Output -->
+            <div class="right-panel">
+                <div class="section">
+                    <h2>🌳 Tree Visualization</h2>
+                    <div class="canvas-container">
+                        <canvas id="treeCanvas"></canvas>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>📤 Query Output</h2>
+                    <div id="messageBox" class="output-terminal"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="legend">
+                <h3>Legend:</h3>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <span class="legend-circle normal"></span>
+                        <span>Normal Node</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-circle highlight"></span>
+                        <span>Highlighted Node</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-circle found"></span>
+                        <span>Found/Selected</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-circle traversal"></span>
+                        <span>Traversal Path</span>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <p>💡 <strong>Tips:</strong> Click on nodes to highlight them • Use traversal buttons to see different orderings • Try building balanced trees!</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="bst_visualizer.js"></script>
+</body>
+</html>
