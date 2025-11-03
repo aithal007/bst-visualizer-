@@ -2,17 +2,14 @@
    BINARY SEARCH TREE VISUALIZER - STYLES
    Modern, Responsive CSS with Smooth Animations
    =========================================================================== */
-
 /* ---------------------------------------------------------------------------
    RESET & BASE STYLES
    --------------------------------------------------------------------------- */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -20,11 +17,9 @@ body {
     min-height: 100vh;
     padding: 20px;
 }
-
 /* ---------------------------------------------------------------------------
    CONTAINER & LAYOUT
    --------------------------------------------------------------------------- */
-
 .container {
     max-width: 1600px;
     margin: 0 auto;
@@ -33,7 +28,6 @@ body {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
-
 header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: #fff;
@@ -43,7 +37,6 @@ header {
     position: relative;
     overflow: hidden;
 }
-
 header::before {
     content: '';
     position: absolute;
@@ -54,7 +47,6 @@ header::before {
     background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
     opacity: 0.3;
 }
-
 .header-logo-title {
     display: flex;
     align-items: center;
@@ -63,14 +55,12 @@ header::before {
     position: relative;
     z-index: 1;
 }
-
 .header-logo {
     width: 60px;
     height: 60px;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
     animation: float 3s ease-in-out infinite;
 }
-
 @keyframes float {
     0%, 100% {
         transform: translateY(0px);
@@ -79,7 +69,6 @@ header::before {
         transform: translateY(-10px);
     }
 }
-
 header h1 {
     font-size: 2.8em;
     margin-bottom: 10px;
@@ -90,7 +79,6 @@ header h1 {
     z-index: 1;
     margin: 0;
 }
-
 .subtitle {
     font-size: 1.2em;
     opacity: 0.95;
@@ -101,7 +89,6 @@ header h1 {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
 }
-
 .btn-header-docs {
     display: inline-flex;
     align-items: center;
@@ -120,45 +107,38 @@ header h1 {
     z-index: 1;
     backdrop-filter: blur(10px);
 }
-
 .btn-header-docs:hover {
     background: rgba(255, 255, 255, 0.3);
     border-color: rgba(255, 255, 255, 0.5);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
-
 .main-content {
     display: grid;
     grid-template-columns: 45% 55%;
     gap: 20px;
     padding: 20px;
 }
-
 @media (max-width: 1024px) {
     .main-content {
         grid-template-columns: 1fr;
     }
 }
-
 /* ---------------------------------------------------------------------------
    CONTROL PANEL
    --------------------------------------------------------------------------- */
-
 .left-panel,
 .right-panel {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-
 .section {
     background: #f8f9fa;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-
 .section h2 {
     font-size: 1.3em;
     margin-bottom: 15px;
@@ -166,17 +146,14 @@ header h1 {
     border-bottom: 2px solid #667eea;
     padding-bottom: 8px;
 }
-
 /* ---------------------------------------------------------------------------
    INPUT GROUPS & BUTTONS
    --------------------------------------------------------------------------- */
-
 .input-group {
     display: flex;
     gap: 10px;
     margin-bottom: 10px;
 }
-
 .input-group input[type="number"],
 .input-group input[type="text"] {
     flex: 1;
@@ -186,18 +163,15 @@ header h1 {
     font-size: 1em;
     transition: border-color 0.3s;
 }
-
 .input-group input:focus {
     outline: none;
     border-color: #667eea;
 }
-
 .button-group {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
 }
-
 .btn {
     padding: 10px 20px;
     border: none;
@@ -210,7 +184,6 @@ header h1 {
     text-decoration: none;
     display: inline-block;
 }
-
 .btn-docs {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: #fff;
@@ -227,76 +200,60 @@ header h1 {
     align-items: center;
     gap: 5px;
 }
-
 .btn-docs:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.6);
 }
-
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .btn:active {
     transform: translateY(0);
 }
-
 .btn-primary {
     background: #3498db;
     color: #fff;
 }
-
 .btn-primary:hover {
     background: #2874a6;
 }
-
 .btn-danger {
     background: #e74c3c;
     color: #fff;
 }
-
 .btn-danger:hover {
     background: #c0392b;
 }
-
 .btn-success {
     background: #27ae60;
     color: #fff;
 }
-
 .btn-success:hover {
     background: #1e8449;
 }
-
 .btn-info {
     background: #16a085;
     color: #fff;
 }
-
 .btn-info:hover {
     background: #138d75;
 }
-
 .btn-secondary {
     background: #95a5a6;
     color: #fff;
 }
-
 .btn-secondary:hover {
     background: #7f8c8d;
 }
-
 .btn-traversal {
     background: #9b59b6;
     color: #fff;
     flex: 1;
 }
-
 .btn-traversal:hover {
     background: #8e44ad;
 }
-
 .btn-small {
     padding: 6px 12px;
     font-size: 0.9em;
@@ -307,15 +264,12 @@ header h1 {
     cursor: pointer;
     transition: all 0.3s;
 }
-
 .btn-small:hover {
     background: #bdc3c7;
 }
-
 /* ---------------------------------------------------------------------------
    OUTPUT & MESSAGES
    --------------------------------------------------------------------------- */
-
 .output-box {
     background: #fff;
     border: 2px solid #ddd;
@@ -326,7 +280,6 @@ header h1 {
     font-family: 'Courier New', monospace;
     color: #2c3e50;
 }
-
 .output-terminal {
     background: #1e1e1e;
     border: 2px solid #333;
@@ -340,51 +293,41 @@ header h1 {
     font-size: 0.95em;
     line-height: 1.6;
 }
-
 .output-terminal::-webkit-scrollbar {
     width: 8px;
 }
-
 .output-terminal::-webkit-scrollbar-track {
     background: #2a2a2a;
 }
-
 .output-terminal::-webkit-scrollbar-thumb {
     background: #555;
     border-radius: 4px;
 }
-
-/* Prolog Terminal Styles */
 .prolog-terminal {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: #ecf0f1;
 }
-
 .prolog-terminal h2 {
     color: #3498db;
     border-bottom: 2px solid #3498db;
 }
-
 .terminal-header {
     margin-bottom: 15px;
     padding: 10px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 6px;
 }
-
 .terminal-title {
     font-size: 1.5em;
     font-weight: bold;
     color: #3498db;
     font-family: 'Courier New', monospace;
 }
-
 .terminal-subtitle {
     margin-left: 10px;
     color: #95a5a6;
     font-size: 0.9em;
 }
-
 .query-input-container {
     display: flex;
     flex-direction: column;
@@ -395,21 +338,18 @@ header h1 {
     border: 2px solid #3498db;
     margin-bottom: 15px;
 }
-
 .query-input-wrapper {
     display: flex;
     align-items: center;
     gap: 10px;
     width: 100%;
 }
-
 .prolog-prompt {
     color: #3498db;
     font-weight: bold;
     font-size: 1.2em;
     font-family: 'Courier New', monospace;
 }
-
 .prolog-input {
     flex: 1;
     background: transparent;
@@ -420,11 +360,9 @@ header h1 {
     padding: 10px 12px;
     outline: none;
 }
-
 .prolog-input::placeholder {
     color: #666;
 }
-
 .btn-execute {
     background: #27ae60;
     color: #fff;
@@ -436,17 +374,14 @@ header h1 {
     transition: all 0.3s;
     width: 100%;
 }
-
 .btn-execute:hover {
     background: #229954;
     transform: scale(1.02);
 }
-
 .history-section {
     background: #2c3e50;
     margin-top: 10px;
 }
-
 .history-section h3 {
     font-size: 1.1em;
     margin-bottom: 10px;
@@ -454,7 +389,6 @@ header h1 {
     border-bottom: 1px solid #3498db;
     padding-bottom: 5px;
 }
-
 .command-history {
     background: #1e1e1e;
     border-radius: 8px;
@@ -464,7 +398,6 @@ header h1 {
     font-family: 'Consolas', 'Courier New', monospace;
     font-size: 0.9em;
 }
-
 .command-history-item {
     padding: 8px;
     margin-bottom: 8px;
@@ -472,29 +405,23 @@ header h1 {
     background: rgba(52, 152, 219, 0.1);
     border-radius: 4px;
 }
-
 .command-query {
     color: #3498db;
     margin-bottom: 4px;
 }
-
 .command-result {
     color: #00ff00;
     padding-left: 10px;
 }
-
 .command-error {
     color: #e74c3c;
     padding-left: 10px;
 }
-
-/* Examples List */
 .examples-list {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
-
 .example-item {
     background: #fff;
     padding: 12px;
@@ -506,55 +433,46 @@ header h1 {
     justify-content: space-between;
     align-items: center;
 }
-
 .example-item:hover {
     background: #f0f4ff;
     transform: translateX(5px);
     box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
 }
-
 .example-item code {
     font-family: 'Consolas', 'Courier New', monospace;
     color: #667eea;
     font-weight: bold;
     font-size: 0.95em;
 }
-
 .example-desc {
     font-size: 0.85em;
     color: #666;
     font-style: italic;
 }
-
 .canvas-info {
     background: rgba(102, 126, 234, 0.1);
     padding: 10px 15px;
     border-radius: 6px;
     border-left: 4px solid #667eea;
 }
-
 .info-text {
     color: #555;
     font-weight: 500;
 }
-
 .canvas-info {
     background: rgba(102, 126, 234, 0.1);
     padding: 10px 15px;
     border-radius: 6px;
     border-left: 4px solid #667eea;
 }
-
 .info-text {
     color: #555;
     font-weight: 500;
 }
-
 .message-box {
     min-height: 80px;
     position: relative;
 }
-
 .message {
     padding: 12px 16px;
     border-radius: 8px;
@@ -563,7 +481,6 @@ header h1 {
     animation: slideIn 0.3s ease-out;
     transition: opacity 0.3s;
 }
-
 @keyframes slideIn {
     from {
         transform: translateX(-20px);
@@ -574,41 +491,34 @@ header h1 {
         opacity: 1;
     }
 }
-
 .message-success {
     background: #d4edda;
     color: #155724;
     border-left: 4px solid #28a745;
 }
-
 .message-error {
     background: #f8d7da;
     color: #721c24;
     border-left: 4px solid #dc3545;
 }
-
 .message-warning {
     background: #fff3cd;
     color: #856404;
     border-left: 4px solid #ffc107;
 }
-
 .message-info {
     background: #d1ecf1;
     color: #0c5460;
     border-left: 4px solid #17a2b8;
 }
-
 /* ---------------------------------------------------------------------------
    STATISTICS
    --------------------------------------------------------------------------- */
-
 .stats-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 14px;
 }
-
 .stat-item {
     background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
     padding: 16px;
@@ -622,7 +532,6 @@ header h1 {
         0 2px 8px rgba(0, 0, 0, 0.04),
         0 0 0 1px rgba(0, 0, 0, 0.02);
 }
-
 .stat-item:hover {
     transform: translateY(-2px) scale(1.02);
     box-shadow: 
@@ -630,14 +539,12 @@ header h1 {
         0 0 0 1px rgba(102, 126, 234, 0.1);
     border-left-color: #764ba2;
 }
-
 .stat-label {
     font-weight: 600;
     color: #475569;
     font-size: 0.95em;
     letter-spacing: 0.2px;
 }
-
 .stat-value {
     font-size: 1.5em;
     font-weight: 700;
@@ -647,11 +554,9 @@ header h1 {
     -webkit-text-fill-color: transparent;
     text-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
 }
-
 /* ---------------------------------------------------------------------------
    CANVAS VISUALIZATION
    --------------------------------------------------------------------------- */
-
 .canvas-container {
     background: #fff;
     border-radius: 12px;
@@ -659,45 +564,37 @@ header h1 {
     overflow: hidden;
     height: 400px;
 }
-
 #treeCanvas {
     width: 100%;
     height: 100%;
     cursor: pointer;
 }
-
 /* ---------------------------------------------------------------------------
    FOOTER & LEGEND
    --------------------------------------------------------------------------- */
-
 footer {
     background: #f8f9fa;
     padding: 20px 30px;
     border-top: 2px solid #e0e0e0;
 }
-
 .legend {
     margin-bottom: 15px;
 }
-
 .legend h3 {
     font-size: 1.2em;
     margin-bottom: 10px;
     color: #667eea;
 }
-
 .legend-items {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
 }
-
 .legend-item {
     display: flex;
     align-items: center;
     gap: 8px;
 }
-
 .legend-circle {
     width: 30px;
     height: 30px;
@@ -705,27 +602,22 @@ footer {
     border: 3px solid;
     display: inline-block;
 }
-
 .legend-circle.normal {
     background: #3498db;
     border-color: #2874a6;
 }
-
 .legend-circle.highlight {
     background: #f39c12;
     border-color: #d68910;
 }
-
 .legend-circle.found {
     background: #27ae60;
     border-color: #1e8449;
 }
-
 .legend-circle.traversal {
     background: #9b59b6;
     border-color: #8e44ad;
 }
-
 .info {
     margin-top: 15px;
     padding: 15px;
@@ -733,20 +625,16 @@ footer {
     border-radius: 8px;
     border-left: 4px solid #667eea;
 }
-
 .info p {
     line-height: 1.6;
     color: #555;
 }
-
 .info strong {
     color: #667eea;
 }
-
 /* ---------------------------------------------------------------------------
    ANIMATIONS & TRANSITIONS
    --------------------------------------------------------------------------- */
-
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
@@ -755,377 +643,289 @@ footer {
         transform: scale(1.05);
     }
 }
-
 .btn:hover {
     animation: pulse 0.5s ease-in-out;
 }
-
 /* ---------------------------------------------------------------------------
    SCROLLBAR STYLING
    --------------------------------------------------------------------------- */
-
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
-
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb {
     background: #667eea;
     border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background: #764ba2;
 }
-
 /* ---------------------------------------------------------------------------
    RESPONSIVE DESIGN
    --------------------------------------------------------------------------- */
-
 @media (max-width: 768px) {
     body {
         padding: 10px;
     }
-
     header h1 {
         font-size: 1.8em;
     }
-
     .subtitle {
         font-size: 0.9em;
     }
-
     .main-content {
         padding: 10px;
     }
-
     .section {
         padding: 15px;
     }
-
     .stats-grid {
         grid-template-columns: 1fr;
     }
-
     .button-group {
         flex-direction: column;
     }
-
     .btn {
         width: 100%;
     }
-
     .legend-items {
         flex-direction: column;
     }
-
     .canvas-controls {
         flex-direction: column;
         align-items: stretch;
     }
-
     .speed-control {
         margin-left: 0;
         justify-content: space-between;
     }
 }
-
 /* ---------------------------------------------------------------------------
    ACCESSIBILITY
    --------------------------------------------------------------------------- */
-
 .btn:focus,
 input:focus {
     outline: 3px solid #667eea;
     outline-offset: 2px;
 }
-
 .btn:focus:not(:focus-visible) {
     outline: none;
 }
-
 /* ---------------------------------------------------------------------------
    PRINT STYLES
    --------------------------------------------------------------------------- */
-
 @media print {
     body {
         background: white;
     }
-
     .control-panel,
     .canvas-controls,
     footer {
         display: none;
     }
-
     .container {
         box-shadow: none;
     }
 }
-
 /* ---------------------------------------------------------------------------
    MOBILE RESPONSIVE STYLES
    --------------------------------------------------------------------------- */
-
-/* Tablets and smaller */
 @media (max-width: 1024px) {
     .main-content {
         grid-template-columns: 1fr;
     }
-
     .left-panel,
     .right-panel {
         width: 100%;
     }
-
     header h1 {
         font-size: 2.2em;
     }
-
     .subtitle {
         font-size: 1em;
     }
 }
-
-/* Mobile devices */
 @media (max-width: 768px) {
     body {
         padding: 0;
     }
-
     .container {
         border-radius: 0;
         margin: 0;
     }
-
     header {
         padding: 30px 20px;
     }
-
     header h1 {
         font-size: 1.8em;
         flex-direction: column;
         gap: 10px;
     }
-
     .header-logo-title {
         flex-direction: row;
         gap: 12px;
     }
-
     .header-logo {
         width: 45px;
         height: 45px;
     }
-
     .subtitle {
         font-size: 0.95em;
         margin-bottom: 15px;
     }
-
     .btn-header-docs {
         padding: 10px 20px;
         font-size: 0.9em;
     }
-
     .main-content {
         padding: 15px;
         gap: 15px;
     }
-
-    /* Left Panel - Query Interface */
     .section {
         padding: 15px;
     }
-
     .section h2 {
         font-size: 1.1em;
     }
-
     .prolog-terminal h2 {
         font-size: 1.2em;
     }
-
     .terminal-header {
         padding: 8px;
     }
-
     .terminal-title {
         font-size: 1.2em;
     }
-
     .terminal-subtitle {
         font-size: 0.85em;
     }
-
     .query-input-container {
         padding: 10px;
     }
-
     .prolog-prompt {
         font-size: 1em;
     }
-
     .prolog-input {
         font-size: 0.95em;
         padding: 8px 10px;
     }
-
     .btn-execute {
         padding: 10px 16px;
         font-size: 0.95em;
     }
-
     .history-section h3 {
         font-size: 1em;
     }
-
     .command-history {
         max-height: 120px;
         font-size: 0.9em;
     }
-
-    /* Examples Section */
     .examples-list {
         gap: 8px;
     }
-
     .example-item {
         padding: 10px;
     }
-
     .example-item code {
         font-size: 0.85em;
     }
-
     .example-desc {
         font-size: 0.8em;
     }
-
-    /* Canvas Section */
     .canvas-container {
         min-height: 280px;
         max-height: 350px;
     }
-
     .output-terminal {
         max-height: 180px;
         font-size: 0.85em;
         padding: 10px;
     }
-
-    /* Footer */
     footer {
         padding: 20px 15px;
     }
-
     .legend h3 {
         font-size: 1em;
     }
-
     .legend-items {
         gap: 10px;
     }
-
     .legend-item {
         font-size: 0.85em;
     }
-
     .legend-circle {
         width: 12px;
         height: 12px;
     }
 }
-
-/* Small mobile devices */
 @media (max-width: 480px) {
     header h1 {
         font-size: 1.5em;
     }
-
     .header-logo {
         width: 35px;
         height: 35px;
     }
-
     .subtitle {
         font-size: 0.85em;
     }
-
     .btn-header-docs {
         padding: 8px 16px;
         font-size: 0.85em;
     }
-
     .main-content {
         padding: 10px;
         gap: 10px;
     }
-
     .section {
         padding: 12px;
     }
-
     .section h2 {
         font-size: 1em;
     }
-
     .prolog-input {
         font-size: 0.9em;
     }
-
     .btn-execute {
         padding: 8px 14px;
         font-size: 0.9em;
     }
-
     .example-item {
         padding: 8px;
     }
-
     .example-item code {
         font-size: 0.8em;
         word-break: break-all;
     }
-
     .canvas-container {
         min-height: 250px;
         max-height: 300px;
     }
-
     .output-terminal {
         max-height: 150px;
         font-size: 0.8em;
         padding: 8px;
     }
-
     footer {
         padding: 15px 10px;
     }
-
     .legend-items {
         flex-direction: column;
         gap: 8px;
     }
 }
-
-/* Landscape orientation on mobile */
 @media (max-width: 768px) and (orientation: landscape) {
     .canvas-container {
         min-height: 200px;
         max-height: 250px;
     }
-
     header {
         padding: 20px 15px;
     }
-
     header h1 {
         font-size: 1.6em;
     }

@@ -14,14 +14,12 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 40px 20px;
         }
-
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -30,25 +28,21 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             overflow: hidden;
         }
-
         header {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: #fff;
             padding: 40px;
             text-align: center;
         }
-
         header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 700;
         }
-
         header p {
             font-size: 1.1em;
             opacity: 0.9;
         }
-
         .back-btn {
             display: inline-block;
             margin: 20px 0;
@@ -60,20 +54,16 @@
             font-weight: 600;
             transition: all 0.3s;
         }
-
         .back-btn:hover {
             background: #2874a6;
             transform: translateY(-2px);
         }
-
         .content {
             padding: 40px;
         }
-
         .command-category {
             margin-bottom: 40px;
         }
-
         .category-title {
             font-size: 1.8em;
             color: #667eea;
@@ -81,7 +71,6 @@
             border-bottom: 3px solid #667eea;
             padding-bottom: 10px;
         }
-
         .command-card {
             background: #f8f9fa;
             border-left: 4px solid #667eea;
@@ -90,13 +79,11 @@
             margin-bottom: 15px;
             transition: all 0.3s;
         }
-
         .command-card:hover {
             background: #e9ecef;
             transform: translateX(5px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-
         .command-syntax {
             font-family: 'Consolas', 'Courier New', monospace;
             font-size: 1.1em;
@@ -107,13 +94,11 @@
             padding: 10px 15px;
             border-radius: 6px;
         }
-
         .command-description {
             color: #555;
             line-height: 1.6;
             margin-bottom: 10px;
         }
-
         .command-example {
             background: #fff3cd;
             border-left: 3px solid #ffc107;
@@ -121,11 +106,9 @@
             margin-top: 10px;
             border-radius: 4px;
         }
-
         .command-example strong {
             color: #856404;
         }
-
         .command-example code {
             font-family: 'Consolas', 'Courier New', monospace;
             color: #27ae60;
@@ -133,7 +116,6 @@
             padding: 2px 6px;
             border-radius: 3px;
         }
-
         .note {
             background: #d1ecf1;
             border-left: 3px solid #17a2b8;
@@ -141,100 +123,78 @@
             margin: 20px 0;
             border-radius: 4px;
         }
-
         .note strong {
             color: #0c5460;
         }
-
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
             body {
                 padding: 20px 10px;
             }
-
             .container {
                 border-radius: 12px;
             }
-
             header {
                 padding: 30px 20px;
             }
-
             header h1 {
                 font-size: 2em;
             }
-
             header p {
                 font-size: 1em;
             }
-
             .back-btn {
                 padding: 8px 16px;
                 font-size: 0.9em;
             }
-
             .content {
                 padding: 20px 15px;
             }
-
             .command-category {
                 margin-bottom: 30px;
             }
-
             .category-title {
                 font-size: 1.5em;
             }
-
             .command-card {
                 padding: 15px;
             }
-
             .command-syntax {
                 font-size: 0.95em;
                 padding: 8px 12px;
                 word-break: break-all;
             }
-
             .command-description {
                 font-size: 0.9em;
             }
-
             .command-example {
                 padding: 8px 12px;
                 font-size: 0.85em;
             }
-
             .command-example code {
                 word-break: break-all;
             }
-
             .note {
                 padding: 12px;
                 font-size: 0.9em;
             }
         }
-
         @media (max-width: 480px) {
             header h1 {
                 font-size: 1.6em;
             }
-
             header p {
                 font-size: 0.9em;
             }
-
             .content {
                 padding: 15px 10px;
             }
-
             .category-title {
                 font-size: 1.3em;
             }
-
             .command-card {
                 padding: 12px;
             }
-
             .command-syntax {
                 font-size: 0.85em;
             }
@@ -248,12 +208,9 @@
             <p>Complete guide to all supported Binary Search Tree operations</p>
             <a href="index.html" class="back-btn">← Back to Visualizer</a>
         </header>
-
         <div class="content">
-            <!-- Tree Construction -->
             <div class="command-category">
                 <h2 class="category-title">🏗️ Tree Construction</h2>
-                
                 <div class="command-card">
                     <div class="command-syntax">build_tree([Values], T)</div>
                     <div class="command-description">
@@ -264,7 +221,6 @@
                         Creates a tree with root 50, left subtree containing 30,20,40 and right subtree containing 70,60,80
                     </div>
                 </div>
-
                 <div class="command-card">
                     <div class="command-syntax">clear</div>
                     <div class="command-description">
@@ -276,11 +232,8 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Tree Modification -->
             <div class="command-category">
                 <h2 class="category-title">✏️ Tree Modification</h2>
-                
                 <div class="command-card">
                     <div class="command-syntax">insert(Value, T)</div>
                     <div class="command-description">
@@ -291,7 +244,6 @@
                         Inserts value 45 into the current tree
                     </div>
                 </div>
-
                 <div class="command-card">
                     <div class="command-syntax">delete(Value, T)</div>
                     <div class="command-description">
@@ -303,11 +255,8 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Tree Search -->
             <div class="command-category">
                 <h2 class="category-title">🔍 Tree Search</h2>
-                
                 <div class="command-card">
                     <div class="command-syntax">lookup(Value, T)</div>
                     <div class="command-description">
@@ -319,11 +268,8 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Tree Traversals -->
             <div class="command-category">
                 <h2 class="category-title">🚶 Tree Traversals</h2>
-                
                 <div class="command-card">
                     <div class="command-syntax">inorder(T, L)</div>
                     <div class="command-description">
@@ -334,7 +280,6 @@
                         Returns sorted list: [20, 30, 40, 50, 60, 70, 80]
                     </div>
                 </div>
-
                 <div class="command-card">
                     <div class="command-syntax">preorder(T, L)</div>
                     <div class="command-description">
@@ -345,7 +290,6 @@
                         Returns list: [50, 30, 20, 40, 70, 60, 80]
                     </div>
                 </div>
-
                 <div class="command-card">
                     <div class="command-syntax">postorder(T, L)</div>
                     <div class="command-description">
@@ -357,11 +301,8 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Tree Properties -->
             <div class="command-category">
                 <h2 class="category-title">📊 Tree Properties</h2>
-                
                 <div class="command-card">
                     <div class="command-syntax">size(T)</div>
                     <div class="command-description">
@@ -372,7 +313,6 @@
                         Returns: Size = 7
                     </div>
                 </div>
-
                 <div class="command-card">
                     <div class="command-syntax">height(T)</div>
                     <div class="command-description">
@@ -383,7 +323,6 @@
                         Returns: Height = 3
                     </div>
                 </div>
-
                 <div class="command-card">
                     <div class="command-syntax">find_min(T)</div>
                     <div class="command-description">
@@ -394,7 +333,6 @@
                         Returns: Minimum = 20
                     </div>
                 </div>
-
                 <div class="command-card">
                     <div class="command-syntax">find_max(T)</div>
                     <div class="command-description">
@@ -405,7 +343,6 @@
                         Returns: Maximum = 80
                     </div>
                 </div>
-
                 <div class="command-card">
                     <div class="command-syntax">count_leaves(T)</div>
                     <div class="command-description">
@@ -417,11 +354,8 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Tree Validation -->
             <div class="command-category">
                 <h2 class="category-title">✅ Tree Validation</h2>
-                
                 <div class="command-card">
                     <div class="command-syntax">is_valid_bst(T)</div>
                     <div class="command-description">
@@ -433,7 +367,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="note">
                 <strong>💡 Pro Tips:</strong><br>
                 • You can chain operations by executing queries one after another<br>
