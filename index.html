@@ -88,6 +88,11 @@
             <div class="right-panel">
                 <div class="section">
                     <h2>Tree Visualization</h2>
+                    <div class="zoom-controls">
+                        <button onclick="zoomIn()" class="zoom-btn" title="Zoom In">+</button>
+                        <button onclick="zoomOut()" class="zoom-btn" title="Zoom Out">-</button>
+                        <button onclick="resetView()" class="zoom-btn" title="Reset View">Reset</button>
+                    </div>
                     <div class="canvas-container">
                         <canvas id="treeCanvas"></canvas>
                     </div>

@@ -17,12 +17,22 @@ let offsetX = 0;
 let offsetY = 0;
 let commandHistory = [];
 let currentTree = null; 
+let isDragging = false;
+let dragStartX = 0;
+let dragStartY = 0;
+let lastOffsetX = 0;
+let lastOffsetY = 0;
 window.onload = function() {
     canvas = document.getElementById('treeCanvas');
     ctx = canvas.getContext('2d');
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
     canvas.addEventListener('click', handleCanvasClick);
+    canvas.addEventListener('wheel', handleWheel, { passive: false });
+    canvas.addEventListener('mousedown', handleMouseDown);
+    canvas.addEventListener('mousemove', handleMouseMove);
+    canvas.addEventListener('mouseup', handleMouseUp);
+    canvas.addEventListener('mouseleave', handleMouseUp);
     document.getElementById('prologInput').addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             executePrologQuery();
@@ -31,6 +41,20 @@ window.onload = function() {
     drawTree();
     showOutput('Welcome to BST Prolog Visualizer!\nType a command or click an example to get started.\n\nExample: build_tree([50,30,70,20,40,60,80], T)', 'info');
 };
+function zoomIn() {
+    scale = Math.min(scale * 1.2, 3);
+    drawTree();
+}
+function zoomOut() {
+    scale = Math.max(scale / 1.2, 0.3);
+    drawTree();
+}
+function resetView() {
+    scale = 1;
+    offsetX = 0;
+    offsetY = 0;
+    drawTree();
+}
 function resizeCanvas() {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
@@ -464,11 +488,15 @@ function drawTree() {
         ctx.fillText('Empty Tree - Type a Prolog command to start', canvas.width / 2, canvas.height / 2);
         return;
     }
+    ctx.save();
+    ctx.translate(offsetX, offsetY);
+    ctx.scale(scale, scale);
     const treeHeight = getHeight(root);
     const initialSpacing = Math.min(canvas.width / 4, 150);
     calculatePositions(root, canvas.width / 2, 50, initialSpacing);
     drawEdges(root);
     drawNodes(root);
+    ctx.restore();
 }
 function drawEdges(node) {
     if (node === null) return;
@@ -562,9 +590,10 @@ function clearHighlights(node) {
     clearHighlights(node.right);
 }
 function handleCanvasClick(event) {
+    if (isDragging) return;
     const rect = canvas.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
+    const x = (event.clientX - rect.left - offsetX) / scale;
+    const y = (event.clientY - rect.top - offsetY) / scale;
     const clickedNode = findNodeAt(root, x, y);
     if (clickedNode) {
         clearHighlights(root);
@@ -572,6 +601,40 @@ function handleCanvasClick(event) {
         drawTree();
         showOutput(`Selected node: ${clickedNode.value}`, 'info');
     }
+}
+function handleWheel(event) {
+    event.preventDefault();
+    const rect = canvas.getBoundingClientRect();
+    const mouseX = event.clientX - rect.left;
+    const mouseY = event.clientY - rect.top;
+    const worldX = (mouseX - offsetX) / scale;
+    const worldY = (mouseY - offsetY) / scale;
+    const zoomFactor = event.deltaY < 0 ? 1.1 : 0.9;
+    const newScale = Math.min(Math.max(0.3, scale * zoomFactor), 3);
+    offsetX = mouseX - worldX * newScale;
+    offsetY = mouseY - worldY * newScale;
+    scale = newScale;
+    drawTree();
+}
+function handleMouseDown(event) {
+    isDragging = true;
+    dragStartX = event.clientX;
+    dragStartY = event.clientY;
+    lastOffsetX = offsetX;
+    lastOffsetY = offsetY;
+    canvas.style.cursor = 'grabbing';
+}
+function handleMouseMove(event) {
+    if (!isDragging) return;
+    const dx = event.clientX - dragStartX;
+    const dy = event.clientY - dragStartY;
+    offsetX = lastOffsetX + dx;
+    offsetY = lastOffsetY + dy;
+    drawTree();
+}
+function handleMouseUp() {
+    isDragging = false;
+    canvas.style.cursor = 'default';
 }
 function findNodeAt(node, x, y) {
     if (node === null) return null;
